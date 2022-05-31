@@ -102,6 +102,12 @@ class DetalleFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detalle, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val idElemento = arguments?.getInt(MainActivity.LLAVE_ID_ELEMENTO, 0) ?: 0
+        setDatosElemento(idElemento)
+    }
+
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -113,11 +119,10 @@ class DetalleFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(idElemento: Int) =
             DetalleFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(MainActivity.LLAVE_ID_ELEMENTO, idElemento)
                 }
             }
     }

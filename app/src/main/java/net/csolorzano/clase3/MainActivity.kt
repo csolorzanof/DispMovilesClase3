@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.FragmentContainerView
 
 interface ElementoListener{
     fun onSelected(id: Int)
@@ -11,26 +12,29 @@ interface ElementoListener{
 
 class MainActivity : AppCompatActivity(), ElementoListener {
 
-    var esPanelDual: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        esPanelDual = findViewById<View>(R.id.frgDetalle) != null
+        if(savedInstanceState == null){
+            findViewById<FragmentContainerView>(R.id.frgContenedor)?.let { layout ->
+                val frgLista = ListaFragment()
+                supportFragmentManager.beginTransaction()
+                    .add(layout.id, frgLista)
+                    .commit()
+            }
+        }
     }
 
     override fun onSelected(id: Int) {
-        if(esPanelDual){
-            val frgDetalle = supportFragmentManager
-                .findFragmentById(R.id.frgDetalle) as DetalleFragment
-            frgDetalle.setDatosElemento(id)
-        }else{
-            val intDetalle = Intent(this, DetalleActivity::class.java).apply {
-                putExtra(LLAVE_ID_ELEMENTO, id)
+        findViewById<FragmentContainerView>(R.id.frgContenedor)
+            ?.let { layout ->
+                val frgDetalle = DetalleFragment.newInstance(id)
+                supportFragmentManager.beginTransaction()
+                    .replace(layout.id, frgDetalle)
+                    .addToBackStack(null)
+                    .commit()
             }
-            startActivity(intDetalle)
-        }
     }
 
     companion object{
