@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Clase3</string>
+
+    <string name="elementos">Elementos</string>
+    <string name="header">Elemento: %s</string>
+    <string name="simbolo">Símbolo: %s</string>
+    <string name="peso">Peso atómico: %s</string>
+    <string name="hidro">Hidrógeno</string>
+    <string name="helio">Helio</string>
+    <string name="litio">Litio</string>
+    <string name="ber">Berilio</string>
+    <string name="boro">Boro</string>
+    <string name="carbono">Carbono</string>
+    <string name="nitro">Nitrógeno</string>
+    <string name="oxi">Oxígeno</string>
+    <string name="fluor">Flúor</string>
+    <string name="neon">Neón</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ElementoTextView" parent="Base.TextAppearance.AppCompat.Large">
+        <item name="android:padding">22dp</item>
+    </style>
+    <style name="ElementoHeader" parent="Base.TextAppearance.AppCompat.Display1">
+        <item name="android:padding">22dp</item>
+    </style>
 </resources>

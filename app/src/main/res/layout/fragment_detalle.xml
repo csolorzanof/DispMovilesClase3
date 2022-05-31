@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetalleFragment" >
+
+    <TextView
+        android:id="@+id/txtElemento"
+        style="@style/ElementoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/header" />
+
+    <TextView
+        android:id="@+id/txtSimbolo"
+        style="@style/ElementoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/simbolo" />
+
+    <TextView
+        android:id="@+id/txtPeso"
+        style="@style/ElementoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/peso" />
+</LinearLayout>
